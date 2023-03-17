@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import MenuItem from "./MenuItem.component";
+import DarkModeSwitch from "./DarkModeSwitch.component";
 
 import { AiFillHome, AiFillInfoCircle } from "react-icons/ai";
 
@@ -11,7 +12,8 @@ const Header = () => {
         <MenuItem title="HOME" href="/" Icon={AiFillHome} />
         <MenuItem title="ABOUT" href="/about" Icon={AiFillInfoCircle} />
       </div>
-      <div>
+      <div className="flex items-center space-x-5">
+        <DarkModeSwitch />
         <Link href="/">
           <h2 className="text-2xl">
             <span className="bg-amber-500 font-bold py-1 px-2 mr-1 rounded-lg">
