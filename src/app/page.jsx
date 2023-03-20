@@ -1,12 +1,29 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Results from "@/components/Results.component";
 
-const inter = Inter({ subsets: ["latin"] });
+const apiKey = process.env.TMDB_API_KEY;
 
-export default function Home() {
+const getUrl = (genre) => {
+  let slug;
+  if (genre === "fetchTrending") slug = `trending/movie/week?api_key=${apiKey}`;
+  if (genre === "fetchTopRated") slug = `movie/top_rated?api_key=${apiKey}`;
+
+  return "https://api.themoviedb.org/3/" + slug;
+};
+
+const Home = async ({ searchParams }) => {
+  const genre = searchParams.genre || "fetchTrending";
+
+  const res = await fetch(getUrl(genre), { next: { revalidate: 43200 } });
+
+  if (!res.ok) throw Error("failed to fetch response from api");
+
+  const data = await res.json();
+
   return (
     <div>
-      <div className="text-red-400">HELLO from page.jsx</div>
+      <Results results={data.results} />
     </div>
   );
-}
+};
+
+export default Home;

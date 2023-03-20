@@ -7,8 +7,8 @@ import { AiFillHome, AiFillInfoCircle } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <div className="flex justify-between px-2 sm:px-auto sm:py-6 max-w-6xl items-center mx-auto">
-      <div className="flex ">
+    <div className="flex justify-between sm:px-auto p-4 max-w-6xl items-center mx-auto">
+      <div className="flex space-x-4">
         <MenuItem title="HOME" href="/" Icon={AiFillHome} />
         <MenuItem title="ABOUT" href="/about" Icon={AiFillInfoCircle} />
       </div>
