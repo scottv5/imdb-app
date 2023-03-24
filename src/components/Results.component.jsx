@@ -20,7 +20,7 @@ const Results = ({ results }) => {
           vote_count,
         } = result;
 
-        if (!genre || genre !== "fetchTopRated") {
+        if (!genre || genre === "fetchTrending") {
           return (
             <Card
               key={id}
