@@ -11,7 +11,7 @@ const SearchPage = async ({ params }) => {
   if (!res.ok) throw Error("Error fetching data");
 
   const movies = await res.json();
-  console.log(movies.results.map((result) => result.id));
+  //console.log(movies.results.map((result) => result.id));
 
   return (
     <div>
