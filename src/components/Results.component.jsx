@@ -32,7 +32,7 @@ const Results = ({ results }) => {
             />
           );
         }
-        if (genre === "fetchTopRated" && vote_count >= 5000) {
+        if (genre === "fetchTopRated" && vote_count >= 5001) {
           return (
             <Card
               key={id}
