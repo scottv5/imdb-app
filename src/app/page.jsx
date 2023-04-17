@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Results from "@/components/Results.component";
 
 const apiKey = process.env.TMDB_API_KEY;
