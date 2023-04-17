@@ -1,6 +1,7 @@
 import Results from "@/components/Results.component";
 
 const apiKey = process.env.TMDB_API_KEY;
+console.log({ apiKey });
 
 const getUrl = (genre = "fetchTrending", page = 1) => {
   let slug;
